@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+body,
+html {
+    width: 100% !important;
+    height: 100% !important;
+    font-family: Verdana, Geneva, sans-serif !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    color:black!important;
+    background-color:white !important;
+    line-height: 1.6em !important;
+}
+
+.login-header {
+    background-color:#13678A !important;
+    border-color: #011F26 !important;
+    color: whitesmoke !important;
+    top: 0;
+    width: 100%;
+}
+
+.login-header-txt {
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+.top-bar {
+    position: absolute !important;
+    overflow: hidden !important;
+    background-color:  #13678A !important;
+    border-color:#011F26  !important;
+    color: whitesmoke !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100%;
+}
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-pad-btm {
+    padding-bottom: 0 !important;
+}
+
+.no-pad-top {
+    padding-top: 0 !important;
+}
+.footer {
+    /* position: absolute; */
+    position: fixed;
+    overflow: hidden !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100%;
+    text-align: center;
+    background-color:#13678A !important;
+    border-color: #011F26 !important;
+    color: whitesmoke !important;
+}
+
+.footer-text {
+    font-size: 20px;
+}
+.header-text{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
