@@ -7,7 +7,8 @@ import { EmployeedetailsComponent } from './employeedetails/employeedetails.comp
 import { AssetloginComponent } from './assetlogin/assetlogin.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeregisterComponent } from './employeeregister/employeeregister.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
     AssetloginComponent,
     FooterComponent,
     HeaderComponent,
-    AssetdetailsComponent
+    AssetdetailsComponent,
+    DashboardComponent,
+    EmployeeregisterComponent,
   ],
   imports: [
     BrowserModule,
