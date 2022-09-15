@@ -4,12 +4,14 @@ import { EmployeedetailsComponent } from './employeedetails/employeedetails.comp
 import { AssetloginComponent } from './assetlogin/assetlogin.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
 
 const routes: Routes = [
   {path:'assetlogin',component:AssetloginComponent},
   {path:'footer',component:FooterComponent},
   {path:'header',component:HeaderComponent},
   { path: 'employeedetails',component:EmployeedetailsComponent},
+  { path: 'assetdetails',component:AssetdetailsComponent},
 ];
 
 @NgModule({
