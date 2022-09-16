@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeregisterComponent } from './employeeregister/employeeregister.component';
+import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
+import { ReturnassetComponent } from './returnasset/returnasset.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { EmployeeregisterComponent } from './employeeregister/employeeregister.c
     AssetdetailsComponent,
     DashboardComponent,
     EmployeeregisterComponent,
+    ReturnassetComponent,
   ],
   imports: [
     BrowserModule,
