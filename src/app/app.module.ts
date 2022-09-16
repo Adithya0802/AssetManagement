@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeregisterComponent } from './employeeregister/employeeregister.component';
 import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
 import { ReturnassetComponent } from './returnasset/returnasset.component';
+import { AddassetComponent } from './addasset/addasset.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { ReturnassetComponent } from './returnasset/returnasset.component';
     DashboardComponent,
     EmployeeregisterComponent,
     ReturnassetComponent,
+    AddassetComponent,
   ],
   imports: [
     BrowserModule,
