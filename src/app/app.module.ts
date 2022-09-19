@@ -12,6 +12,8 @@ import { EmployeeregisterComponent } from './employeeregister/employeeregister.c
 import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
 import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
+import { NewuserComponent } from './newuser/newuser.component';
+
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AddassetComponent } from './addasset/addasset.component';
     EmployeeregisterComponent,
     ReturnassetComponent,
     AddassetComponent,
+    NewuserComponent,
+  
   ],
   imports: [
     BrowserModule,

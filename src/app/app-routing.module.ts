@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeregisterComponent } from './employeeregister/employeeregister.component';
 import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
+import { NewuserComponent } from './newuser/newuser.component';
 
 const routes: Routes = [
   {path:'assetlogin',component:AssetloginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path:'employeeregister',component:EmployeeregisterComponent},
   { path:'returnasset',component:ReturnassetComponent},
   { path:'addasset',component:AddassetComponent},
+  { path:'newuser',component:NewuserComponent},
 ];
 
 @NgModule({
