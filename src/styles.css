@@ -71,3 +71,8 @@ html {
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
+.form-mandatory-field {
+
+    color: #ff0131;
+
+}
