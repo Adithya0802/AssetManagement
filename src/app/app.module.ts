@@ -13,6 +13,7 @@ import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
 import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 
 
@@ -29,6 +30,7 @@ import { NewuserComponent } from './newuser/newuser.component';
     ReturnassetComponent,
     AddassetComponent,
     NewuserComponent,
+    ForgetpasswordComponent,
   
   ],
   imports: [

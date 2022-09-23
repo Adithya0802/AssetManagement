@@ -9,7 +9,6 @@ html {
     font-size: 14px !important;
     margin: 0 !important;
     overflow-x: hidden !important;
-    color:black!important;
     background-color:white !important;
     line-height: 1.6em !important;
 }
@@ -31,7 +30,6 @@ html {
     position: absolute !important;
     overflow: hidden !important;
     background-color:  #13678A !important;
-    border-color:#011F26  !important;
     color: whitesmoke !important;
     top: 0 !important;
     right: 0 !important;

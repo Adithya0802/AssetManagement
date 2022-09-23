@@ -10,6 +10,7 @@ import { EmployeeregisterComponent } from './employeeregister/employeeregister.c
 import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
   {path:'assetlogin',component:AssetloginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path:'returnasset',component:ReturnassetComponent},
   { path:'addasset',component:AddassetComponent},
   { path:'newuser',component:NewuserComponent},
+  { path:'forgetpassword',component:ForgetpasswordComponent},
 ];
 
 @NgModule({

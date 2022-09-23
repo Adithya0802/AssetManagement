@@ -15,5 +15,4 @@ export class AssetloginComponent implements OnInit {
   onSignIn() { 
     this.router.navigate(['/employeedetails']);
   }
-
 }
