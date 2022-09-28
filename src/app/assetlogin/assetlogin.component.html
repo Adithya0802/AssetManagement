@@ -11,20 +11,21 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <h2 style="text-align:center">LOGIN</h2>
             <hr>
-          <form>
+          <!-- <form> -->
            
          
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid employee id" />
+              <input type="email" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="employeeId"
+                placeholder="Enter a valid employee id" >
               <label class="form-label" for="form3Example3">Employee ID</label>
               <span class="form-mandatory-field">*</span>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
+              <input type="password" id="form3Example4" class="form-control form-control-lg" 
+              [(ngModel)]="password"
                 placeholder="Enter password" />
               <label class="form-label" for="form3Example4">Password</label>
               <span class="form-mandatory-field">*</span>
@@ -49,7 +50,7 @@
              
             </div>
   
-          </form>
+          <!-- </form> -->
         </div>
       </div>
     </div>

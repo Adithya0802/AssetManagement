@@ -14,6 +14,8 @@ import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,7 +23,6 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
   declarations: [
     AppComponent,
     EmployeedetailsComponent,
-    AssetloginComponent,
     FooterComponent,
     HeaderComponent,
     AssetdetailsComponent,
@@ -31,11 +32,14 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     AddassetComponent,
     NewuserComponent,
     ForgetpasswordComponent,
+    AssetloginComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

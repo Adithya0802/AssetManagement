@@ -7,7 +7,7 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
+          <!-- <form> -->
             <h2 style="text-align: center;">IT Registration </h2>
             <hr>
   
@@ -16,19 +16,19 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
                 <input type="text" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter your  Name" maxlength="40" required />
+                  placeholder="Enter your  Name" maxlength="40" required  [(ngModel)]="Name">
                 <label class="form-label" for="form3Example3"> Name</label>
                 <span class="form-mandatory-field">*</span>
               </div>
               <div class="form-outline mb-4">
                 <input type="text" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter Employee Id" />
+                  placeholder="Enter Employee Id"   [(ngModel)]="EmployeeId">
                 <label class="form-label" for="form3Example3">Employee Id</label>
                 <span class="form-mandatory-field">*</span>
               </div>
             <div class="form-outline mb-4">
               <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" />
+                placeholder="Enter a valid email address" [(ngModel)]="Email">
               <label class="form-label" for="form3Example3">Email address</label>
               <span class="form-mandatory-field">*</span>
             </div>
@@ -36,14 +36,14 @@
             <!-- Password input -->
             <div class="form-outline mb-3">
               <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" />
+                placeholder="Enter password" [(ngModel)]="ppassword">
               <label class="form-label" for="form3Example4">Password</label>
               <span class="form-mandatory-field">*</span>
             </div>
 
             <div class="form-outline mb-3">
                 <input type="password" id="form3Example4" class="form-control form-control-lg"
-                  placeholder="Confrim password" />
+                  placeholder="Confrim password" [(ngModel)]="cpassword">
                 <label class="form-label" for="form3Example4">Confrim Password</label>
                 <span class="form-mandatory-field">*</span>
               </div>
@@ -65,7 +65,7 @@
              
             </div>
   
-          </form>
+          <!-- </form> -->
         </div>
       </div>
     </div>

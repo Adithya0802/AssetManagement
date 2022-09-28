@@ -13,13 +13,13 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 const routes: Routes = [
+  { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
   {path:'assetlogin',component:AssetloginComponent},
   {path:'footer',component:FooterComponent},
   {path:'header',component:HeaderComponent},
   { path: 'employeedetails',component:EmployeedetailsComponent},
   { path: 'assetdetails',component:AssetdetailsComponent},
   { path:'dashboard',component:DashboardComponent},
-  { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'employeeregister',component:EmployeeregisterComponent},
   { path:'returnasset',component:ReturnassetComponent},
   { path:'addasset',component:AddassetComponent},
