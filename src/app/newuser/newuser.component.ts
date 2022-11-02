@@ -16,6 +16,17 @@ export class NewuserComponent implements OnInit {
   cpassword: any;
   Email: any;
   Name: any;
+  password: any;
+  password1: any;
+  newPassword: any;
+  confirmPassword: any;
+  showErrMsg!: boolean;
+  showMatchMsg!: boolean;
+  SpecialCharErrMsg: boolean=false;
+  pswdStrongMsg: boolean=false;
+  NumericErrMsg: boolean=false;
+  UpperCaseErrMsg: boolean =false;
+  LengthErrMsg: boolean=false;
 
   constructor(private restApiService:RestAPIService) { }
 
@@ -37,4 +48,52 @@ console.log('2')
     })
     //this.router.navigate(['/assetlogin']);
   }
+
+  checkPassword() {
+    if (this.password !== undefined && this.password !== null && this.password.trim() !== '' &&
+    this.password1 !== undefined && this.password1 !== null && this.password.trim() !== '') {
+          if(this.newPassword.trim() !== this.confirmPassword.trim()) {
+            this.showErrMsg = true;
+            this.showMatchMsg = false;
+          } else {
+            this.showErrMsg = false;
+            this.showMatchMsg = true;
+          }
+    } else {
+      this.showErrMsg = false;
+    }
+  }
+
+  check(password:any) {
+
+     if (password.match(/[@$!%*?&]/g)) {
+     this.SpecialCharErrMsg = false;
+     } else {
+     this.SpecialCharErrMsg = true;
+     this.pswdStrongMsg = false;
+    }    
+   if (password.match(/[0-9]/g)) {   
+     this.NumericErrMsg = false;
+    } else {    
+    this.NumericErrMsg = true;    
+    this.pswdStrongMsg = false;    
+    }    
+    if (password.match(/[A-Z]/g)) {    
+    this.UpperCaseErrMsg = false;    
+    } else {    
+    this.UpperCaseErrMsg = true;    
+    this.pswdStrongMsg = false;    
+    }    
+    if (password.length >= 8) {    
+    this.LengthErrMsg = false;    
+    } else {    
+    this.LengthErrMsg = true;    
+    this.pswdStrongMsg = false;
+    }
+    if (password.match(/[@$!%*?&]/g) && password.match(/[0-9]/g) && password.match(/[A-Z]/g) && password.length > 8)
+    this.pswdStrongMsg = true;
+  }
+  onView(){
+ this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res =>{ })
+ }
 }

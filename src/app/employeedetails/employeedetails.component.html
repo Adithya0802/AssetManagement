@@ -10,23 +10,23 @@
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <h2 style="text-align: center;"> GET EMPLOYEE  DETAILS</h2>
             <hr>
-          <form>
+          
             
   
             
             <div class="form-outline mb-4">
               <input type="text" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter Employee Id To Search" maxlength="5" required />
+                placeholder="Enter Employee Id To Search" maxlength="5"  [(ngModel)]="employeeId" required />
               <label class="form-label" for="form3Example3">Employee Id</label>
               <span class="form-mandatory-field">*</span>
             </div>
   
                <div class="text-center text-lg-start mt-4 pt-2">
               <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem; "(click)="onSignIn()">Enter</button>
+                style="padding-left: 2.5rem; padding-right: 2.5rem; " [disabled]="(!employeeId )"(click)="onSignIn()">Enter</button>
             </div>
   
-          </form>
+          
         </div>
       </div>
     </div>

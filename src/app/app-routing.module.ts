@@ -11,6 +11,7 @@ import { ReturnassetComponent } from './returnasset/returnasset.component';
 import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { SampleComponent } from './sample/sample.component';
 
 const routes: Routes = [
   { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path:'addasset',component:AddassetComponent},
   { path:'newuser',component:NewuserComponent},
   { path:'forgetpassword',component:ForgetpasswordComponent},
+  { path:'sample',component:SampleComponent},
 ];
 
 @NgModule({

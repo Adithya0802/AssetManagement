@@ -12,24 +12,12 @@ export class AssetloginComponent implements OnInit {
   employeeId:any;
   assetId: any;
   password: any;
-  
-
-
-  constructor(private restApiService:RestAPIService) { }
+ 
+  constructor(private restApiService:RestAPIService,private router:Router) { }
 
   ngOnInit(): void {
   }
   onSignIn() { 
-    const params={
-      'AssestID':this.assetId,
-      'EmployeeId':this.employeeId,
-      'password':this.password,
-    }
-    this.restApiService.post(PathConstants.AssetLogin_Post, params).subscribe(res => {
-
-
-
-    })
-   // this.router.navigate(['/employeedetails']);
+   this.router.navigate(['/employeedetails']);
   }
 }

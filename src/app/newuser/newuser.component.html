@@ -34,19 +34,54 @@
             </div>
   
             <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input type="password" id="form3Example4" class="form-control form-control-lg"
-                placeholder="Enter password" [(ngModel)]="ppassword">
-              <label class="form-label" for="form3Example4">Password</label>
-              <span class="form-mandatory-field">*</span>
-            </div>
-
-            <div class="form-outline mb-3">
-                <input type="password" id="form3Example4" class="form-control form-control-lg"
-                  placeholder="Confrim password" [(ngModel)]="cpassword">
-                <label class="form-label" for="form3Example4">Confrim Password</label>
-                <span class="form-mandatory-field">*</span>
+           <!-- Password input -->
+           <div class="form-outline mb-4">
+            <div><label for="_confirmpwd">password</label></div>
+             <input type="email" id="form3Example3" class="form-control form-control-lg"
+               placeholder="Enter the password" [(ngModel)]="password"
+               minlength="8" maxlength="8" (input)="check(password)" required
+               >
               </div>
+              
+
+          <div class="form-outline mb-4">
+            <div><label for="_confirmpwd">ConfirmPassword</label></div>
+
+           <div><input type="email" id="form3Example3" class="form-control form-control-lg"
+            placeholder="Re enter the above password" [(ngModel)]="password1"
+            minlength="8" maxlength="8" (input)="check(password)" required
+            ></div>
+            
+            <div *ngIf="showErrMsg" style="color: rgb(250, 15, 62); font-size: 12px;">Password did
+            
+            not match</div>
+            
+        <div *ngIf="showMatchMsg" style="color: rgb(28, 182, 92); font-size: 12px; text-align: left;">Password
+            
+         matched!</div>
+            
+            
+            
+             <div *ngIf="SpecialCharErrMsg"
+            
+            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one Special  
+            Character must!</div>
+            
+            <div *ngIf="NumericErrMsg"
+            
+            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one Numeric(0-9)
+            
+             must!</div>
+            
+             <div *ngIf="UpperCaseErrMsg"
+            
+            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">Atleast one
+            
+           Uppercase(A-Z) must!</div>
+            
+             <div *ngIf="LengthErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">
+            
+             Minimum 8 Characters!</div>
   
             <div class="d-flex justify-content-between align-items-center">
               <!-- Checkbox -->
@@ -61,7 +96,9 @@
   
             <div class="text-center text-lg-start mt-4 pt-2">
               <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onSignIn()">Submit</button>
+                style="padding-left: 2.5rem; padding-right: 2.5rem;"[disabled]="(!password || !password1 || !Name || !EmployeeId || !Email)" (click)="onSignIn()">Submit</button>
+                <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onView()">view</button>
              
             </div>
   
@@ -70,4 +107,4 @@
       </div>
     </div>
     
-  </section>
+  
