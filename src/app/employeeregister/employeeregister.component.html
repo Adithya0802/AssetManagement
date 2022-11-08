@@ -11,14 +11,12 @@
         <!-- <form> -->
         <h2 style="text-align: center;">Employee Registration Form</h2>
         <hr>
-
-
-
-        <!-- Email input -->
+     <!-- Email input -->
         <div class="form-outline mb-4">
-          <input type="text" class="form-control form-control-lg" placeholder="Enter a valid Employee id"pattern="^[6789]\d{9,9}$"
-          appInputFormat="digitOnly" minlength="4" maxlength="4"
-            required [(ngModel)]="eid" />
+          <input type="text" class="form-control form-control-lg" placeholder="Enter a valid Employee id"
+            pattern="^[6789]\d{9,9}$" appInputFormat="digitOnly" minlength="4" maxlength="4" required
+            [(ngModel)]="eid" />
+
           <label class="form-label" for="form3Example3">Employee Id</label>
           <span class="form-mandatory-field">*</span>
         </div>
@@ -29,25 +27,18 @@
         </div>
         <div class="form-outline mb-4">
           <input type="email" class="form-control form-control-lg" placeholder="Enter a valid email address"
-            [(ngModel)]="email" />
+            [(ngModel)]="email" (input)="checkMailExists()" />
           <label class="form-label" for="form3Example3">Email address</label>
           <span class="form-mandatory-field">*</span>
         </div>
-
-
-
         <div class="text-center text-lg-start mt-4 pt-2">
-          <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="(!eid || !name || !email)"
-            (click)="onSignIn()">Submit</button>
+          <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+            [disabled]="(!eid || !name || !email)" (click)="onSignIn()">Submit</button>
           <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
             (click)="onView()">view</button>
-
-        </div>
-
-
-        <br>
-
-        <!-- </form> -->
+         </div>
+         <br>
+      <!-- </form> -->
       </div>
       <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" responsiveLayout="scroll"
         styleClass="p-datatable-gridlines">
@@ -59,8 +50,6 @@
             </th>
             <th>
               Edit/Update
-
-
             </th>
           </tr>
         </ng-template>
@@ -72,11 +61,9 @@
               </span>
               <span style="text-align: end;">
                 {{rowIndex+1}}
-              </span>
-            </td>
-
-
-            <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
+                </span>
+                </td>
+                <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
               <span class="p-column-title">
                 {{col.header}} :
               </span>
@@ -88,7 +75,7 @@
               <span class="p-column-title">
                 Edit/Update :
               </span>
-              <span><button icon="pi pi-pencil" pButton type="button"  (click)="onEdit(rowData)">
+              <span><button icon="pi pi-pencil" pButton type="button" (click)="onEdit(rowData)">
                   Edit
                 </button></span>
             </td>

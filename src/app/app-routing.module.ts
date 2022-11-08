@@ -12,6 +12,7 @@ import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { SampleComponent } from './sample/sample.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path:'newuser',component:NewuserComponent},
   { path:'forgetpassword',component:ForgetpasswordComponent},
   { path:'sample',component:SampleComponent},
+  { path:'registration',component:RegistrationComponent}
 ];
 
 @NgModule({

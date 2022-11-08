@@ -31,7 +31,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
@@ -42,7 +42,8 @@ import { MatListModule } from '@angular/material/list';
 import { MenubarModule } from 'primeng/menubar';
 import { SampleComponent } from './sample/sample.component';
 import {KnobModule} from 'primeng/knob';
-
+import {KeyFilterModule} from 'primeng/keyfilter';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -60,7 +61,8 @@ import {KnobModule} from 'primeng/knob';
     NewuserComponent,
     ForgetpasswordComponent,
     AssetloginComponent,
-    SampleComponent
+    SampleComponent,
+    RegistrationComponent
   
   ],
   imports: [
@@ -92,10 +94,12 @@ import {KnobModule} from 'primeng/knob';
     MatMenuModule,
     MatListModule,
     MenubarModule,
-    KnobModule
+    KnobModule,
+    KeyFilterModule,
+    
     
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

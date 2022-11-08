@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
-import {  HostListener} from '@angular/core';
+import { HostListener } from '@angular/core';
+import { MessageService} from 'primeng/api';
+import { ResponseMessage } from 'src/app/CommonModules/messages';
 
 @Component({
   selector: 'app-employeeregister',
@@ -15,12 +17,15 @@ export class EmployeeregisterComponent implements OnInit {
   cols: any;
   data: any[] = [];
   id: any;
-  appInputFormat: string="false";
-  event : any;
+  appInputFormat: string = "false";
+  event: any;
+  mailId: any;
+  messageService: any;
 
   constructor(private restApiService: RestAPIService) { }
 
   ngOnInit(): void {
+    this.onView();
     this.cols = [
       { field: 'eid', header: 'Employee Id', align: 'left !important' },
 
@@ -42,21 +47,41 @@ export class EmployeeregisterComponent implements OnInit {
 
   onView() {
     this.restApiService.get(PathConstants.EmpReg_Get).subscribe(res => {
+      res.forEach((i:any) => {
+         this.mailId = i.email;
+      })
       this.data = res
     })
+    console.log('1',this.mailId)
   }
 
   onEdit(selectedRow: {
     sno: any;
-    eid: any; name: any; email: any; 
-} | null | undefined) {
-    if(selectedRow !== null && selectedRow !==undefined){
-      this.id=selectedRow.sno;
-      this.eid= selectedRow.eid;
+    eid: any; name: any; email: any;
+  } | null | undefined) {
+    if (selectedRow !== null && selectedRow !== undefined) {
+      this.id = selectedRow.sno;
+      this.eid = selectedRow.eid;
       this.name = selectedRow.name;
-      this.email= selectedRow.email;
+      this.email = selectedRow.email;
     }
   }
- 
+
+
+  checkMailExists() {
+    if(this.email === this.mailId) {
+      console.log('same mail id')
+      this.messageService.clear();
+      this.messageService.add({
+       severity: ResponseMessage.SEVERITY_SUCCESS,
+        summary: ResponseMessage.SUMMARY_SUCCESS, detail: ResponseMessage.SuccessMessage
+      });
+      console.log('1',this.mailId)
+   } else {
+      console.log('saved successfully')
+    }
+
+  
+}
 }
 

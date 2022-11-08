@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
 
@@ -27,26 +26,22 @@ export class NewuserComponent implements OnInit {
   NumericErrMsg: boolean=false;
   UpperCaseErrMsg: boolean =false;
   LengthErrMsg: boolean=false;
+  id: any;
 
   constructor(private restApiService:RestAPIService) { }
 
   ngOnInit(): void {
   }
   onSignIn() { 
-    console.log('1')
     const params={
+      'sno': this.id,
       'Name':this.Name,
       'EmployeeId':this.EmployeeId,
       'Email':this.Email,
-      'ppassword':this.ppassword,
-      'cpassword':this.cpassword,
-    }
-    this.restApiService.post(PathConstants.ItRegistration_Post, params).subscribe(res => {
-console.log('2')
-
-
-    })
-    //this.router.navigate(['/assetlogin']);
+      'password':this.password,
+      'password1':this.password1,
+    };
+    this.restApiService.post(PathConstants.ItRegistration_Post, params).subscribe(res => { })
   }
 
   checkPassword() {
