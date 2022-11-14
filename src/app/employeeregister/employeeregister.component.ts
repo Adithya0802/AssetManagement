@@ -42,7 +42,7 @@ export class EmployeeregisterComponent implements OnInit {
     };
     console.log('enter', this.name)
     this.restApiService.post(PathConstants.EmpReg_Post, params).subscribe(res => { })
-    this.onView()
+    this.onView();
   }
 
   onView() {
