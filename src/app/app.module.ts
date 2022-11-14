@@ -19,7 +19,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { CardModule } from 'primeng/card';
 import { SidebarModule } from 'primeng/sidebar';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { PanelModule } from 'primeng/panel';
@@ -44,8 +43,16 @@ import { SampleComponent } from './sample/sample.component';
 import {KnobModule} from 'primeng/knob';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import { RegistrationComponent } from './registration/registration.component';
-
-
+import {CardModule} from 'primeng/card';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { ASystemComponent } from './a-system/a-system.component';
+import { ALicenseComponent } from './a-license/a-license.component';
+import { AOfficeComponent } from './a-office/a-office.component';
+import { ADongleComponent } from './a-dongle/a-dongle.component';
+import { APspComponent } from './a-psp/a-psp.component';
+import { AOspaceComponent } from './a-ospace/a-ospace.component';
+import { AddorreturnComponent } from './addorreturn/addorreturn.component';
+import { ItdashboardComponent } from './itdashboard/itdashboard.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +69,15 @@ import { RegistrationComponent } from './registration/registration.component';
     ForgetpasswordComponent,
     AssetloginComponent,
     SampleComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ASystemComponent,
+    ALicenseComponent,
+    AOfficeComponent,
+    ADongleComponent,
+    APspComponent,
+    AOspaceComponent,
+    AddorreturnComponent,
+    ItdashboardComponent
   
   ],
   imports: [
@@ -96,7 +111,8 @@ import { RegistrationComponent } from './registration/registration.component';
     MenubarModule,
     KnobModule,
     KeyFilterModule,
-    
+    BrowserAnimationsModule,
+    MultiSelectModule
     
   ],
   providers: [MessageService],

@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'AssetManagement';
 
   hidemenu: boolean = true;
-
+  offmenu:boolean=true;
 
 
   constructor(private router: Router) {
@@ -25,10 +25,20 @@ export class AppComponent {
 
         }
         else {
-          this.hidemenu = true
+          this.hidemenu = true;
         }
       }
-    })
-  }
-}
 
+      if (events instanceof NavigationEnd) {
+        if ((events.url === '/asystem') || (events.url === '/alicense') || (events.url === '/adongle')|| (events.url === '/aoffice')|| (events.url === '/apsp')|| (events.url === '/addreturnasset') || (events.url === '/aospace') || (events.url === '/itdashboard')){
+
+          this.offmenu = true;
+      }
+      else {
+        this.offmenu = false;
+      }
+    }
+    })
+  
+}
+}

@@ -14,6 +14,6 @@ export class EmployeedetailsComponent implements OnInit {
   ngOnInit(): void {
   }
   onSignIn() { 
-    this.router.navigate(['/assetdetails']);
+    this.router.navigate(['/add-return-asset']);
   }
 }

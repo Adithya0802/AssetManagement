@@ -55,11 +55,10 @@
 
   .card-padding
 {
-    padding-left: px;
-    padding-right: 25px;
-    padding-top:100px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-top:25px;
     padding-bottom: 25px;
-    width: 400px;
 }
 .card2
 {

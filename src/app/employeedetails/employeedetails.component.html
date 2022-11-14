@@ -1,38 +1,42 @@
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid" alt="Sample image">
-        </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h2 style="text-align: center;"> GET EMPLOYEE  DETAILS</h2>
-            <hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  <br>
+  <h1 style="text-align:center; background-color:#0275d8;border-radius: 10px;color: white;">IT MASTER</h1>
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width:525px; height: 400px; padding-left: 50px;padding-right: 50px; padding-top: 100px;padding-bottom: 100px;">
+          <h3 class="text-center"  style="background-color:#0275d8;border-radius: 10px;color: white;">Enter EmployeeId here to ADD or RETURN Asset</h3>
+          <div class="text-center">
+            <input type="text" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Enter Employee Id To Search" maxlength="5"   [(ngModel)]="employeeId" required />
+          </div>
+      <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-success btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; " [disabled]="(!employeeId )"(click)="onSignIn()">Enter</button>
+          </div>
+          </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width:525px; height: 400px;">
           
-            
-  
-            
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter Employee Id To Search" maxlength="5"   [(ngModel)]="employeeId" required />
-              <label class="form-label" for="form3Example3">Employee Id</label>
-              <span class="form-mandatory-field">*</span>
-            </div>
-  
-               <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem; " [disabled]="(!employeeId )"(click)="onSignIn()">Enter</button>
-            </div>
-  
-          
-        </div>
+          </div>
       </div>
     </div>
-
-
-
-
-    
   
+  
+  
+  </div>
+</body>
+</html>

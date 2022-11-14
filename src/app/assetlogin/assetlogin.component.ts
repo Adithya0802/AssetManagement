@@ -18,6 +18,6 @@ export class AssetloginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSignIn() { 
-   this.router.navigate(['/employeedetails']);
+   this.router.navigate(['/itdashboard']);
   }
 }

@@ -13,6 +13,15 @@ import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { SampleComponent } from './sample/sample.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ASystemComponent } from './a-system/a-system.component';
+import { ALicenseComponent } from './a-license/a-license.component';
+import { AOfficeComponent } from './a-office/a-office.component';
+import { ADongleComponent } from './a-dongle/a-dongle.component';
+import { APspComponent } from './a-psp/a-psp.component';
+import { AOspaceComponent } from './a-ospace/a-ospace.component';
+import { AddorreturnComponent } from './addorreturn/addorreturn.component';
+import { ItdashboardComponent } from './itdashboard/itdashboard.component';
+
 
 const routes: Routes = [
   { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
@@ -28,7 +37,15 @@ const routes: Routes = [
   { path:'newuser',component:NewuserComponent},
   { path:'forgetpassword',component:ForgetpasswordComponent},
   { path:'sample',component:SampleComponent},
-  { path:'registration',component:RegistrationComponent}
+  { path:'registration',component:RegistrationComponent},
+  { path:'asystem',component:ASystemComponent},
+  { path:'alicense',component:ALicenseComponent},
+  { path:'aoffice',component: AOfficeComponent},
+  { path:'adongle',component:ADongleComponent},
+  { path:'apsp',component:APspComponent},
+  { path:'aospace',component:AOspaceComponent},
+  { path:'addorreturn',component:AddorreturnComponent},
+  { path:'itdashboard',component:ItdashboardComponent},
 ];
 
 @NgModule({
