@@ -9,15 +9,32 @@ import { RestAPIService } from '../restapi.service';
   styleUrls: ['./assetlogin.component.css']
 })
 export class AssetloginComponent implements OnInit {
-  employeeId:any;
-  assetId: any;
+  employeeId: any;
   password: any;
- 
-  constructor(private restApiService:RestAPIService,private router:Router) { }
+  data: any[] = [];
+
+
+  constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
+    this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => { 
+      this.data = res; 
+      console.log('e',this.data)
+    })
   }
-  onSignIn() { 
-   this.router.navigate(['/itdashboard']);
+  onSignIn() {
+    console.log('data',this.data)
+    console.log('1',this.employeeId)
+    console.log('1',this.password)
+    this.data.forEach((i: any) => {
+      if (i.cpassword === this.password) {
+        console.log('done')
+          this.router.navigate(['/itdashboard'])
+      } else {
+        console.log('no match')
+      }
+    })
+
   }
 }
+
