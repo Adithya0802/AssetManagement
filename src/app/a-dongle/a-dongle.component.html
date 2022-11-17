@@ -1,60 +1,96 @@
-    <div class="row">
-        <div class="col-sm-12 card-padding">
-            <div class="card">
-                <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">DONGLE</h2>
-                <div class="card2">
-           <div class="row">
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">DONGLE NAME:</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">DONGLE NUMBER:</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">IMEI NUMBER:</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">PURCHACED LOCATION:</label>
-                <input type="text" class="form-control" />
-            </div>
-          <div class="row">
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">DONGLE NUMBER:</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form3Example2">STATUS:</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option value="1">select</option>
-                    <option value="ACTIVE">ACTIVE</option>
-                    <option value="INACTIVE">INACTIVE</option>
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">CURRENT USER:</label>
-                <input type="text" class="form-control" />
-            </div>
-            <div class="col-sm-3">
-                <label class="form-label" for="form12">Last User:</label>
-                <input type="text" class="form-control" />
-            </div>
-          </div>
-           </div>
-
-                    <!--System end-->
-                    <br>
-                    <div class="text-center" style="padding-bottom:10px;">
-                        <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;">Submit</button>
-                        <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">view</button>
+<div class="row">
+    <div class="col-sm-12 card-padding">
+        <div class="card">
+            <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">DONGLE</h2>
+            <div class="card2">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="form-label" for="form12">DONGLE NAME:</label>
+                        <input type="text" class="form-control" [(ngModel)]="donglecompanyname" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label" for="form12">DONGLE NUMBER:</label>
+                        <input type="text" class="form-control" [(ngModel)]="donglenumber" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label" for="form12">IMEI NUMBER:</label>
+                        <input type="text" class="form-control" [(ngModel)]="dongleimeino" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label" for="form12">PURCHACED LOCATION:</label>
+                        <input type="text" class="form-control" [(ngModel)]="donglepurchasedlocation" />
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label class="form-label" for="form3Example2">STATUS:</label>
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="donglestatus ">
+                                <option value="1">select</option>
+                                <option value="ACTIVE">ACTIVE</option>
+                                <option value="INACTIVE">INACTIVE</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label" for="form12">CURRENT USER:</label>
+                            <input type="text" class="form-control" [(ngModel)]="users" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label" for="form12">Last User:</label>
+                            <input type="text" class="form-control" [(ngModel)]="donglelastuser " />
+                        </div>
                     </div>
                 </div>
+
+                <!--System end-->
+                <br>
+                <div class="text-center" style="padding-bottom:10px;">
+                    <button type="button" class="btn btn-primary btn-lg"
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;"
+                        (click)="onSignIn()">Submit</button>
+                    
+                </div>
+                <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+                    styleClass="p-datatable-gridlines">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th>S.No</th>
+                            <th *ngFor="let col of columns">
+                                {{col.header}}
+                            </th>
+                            <th>
+                                Edit
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
+                        <tr>
+                            <td class="td-border">
+                                <span class="p-column-title">
+                                    S.No :
+                                </span>
+                                <span style="text-align: end;">
+                                    {{rowIndex+1}}
+                                </span>
+                            </td>
+                            <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
+                                <span class="p-column-title">
+                                    {{col.header}} :
+                                </span>
+                                <span style="text-align: end;"> {{rowData[col.field]}}
+                                </span>
+
+                            <td class="td-border">
+                                <span class="p-column-title">
+                                    Edit:
+                                </span>
+
+                                <button pButton type="button" label="Edit" (click)="onEdit(rowData)"></button>
+
+
+                    </ng-template>
+                </p-table>
+
             </div>
-            <br>
-            <br>
         </div>
-    
+        <br>
+        <br>
+    </div>

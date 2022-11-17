@@ -1,40 +1,80 @@
- <div class="row">
-        <div class="col-sm-12 card-padding">
-            <div class="card">
-                <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">OFFICE 365</h2>
-                <div class="card2">
-                 <div class="row">
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">COMPUTER NAME:</label>
-                        <input type="text" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">INSTALLED DATE:</label>
-                        <input type="date" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">Current User:</label>
-                        <input type="text" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">Last User:</label>
-                        <input type="text" class="form-control" />
-                    </div>
-                 </div>
-
-                   
-                    <!--System end-->
-                    <br>
-                    <!--SAVE AND VIEW BUTTON-->
-                    <div class="text-center" style="padding-bottom:10px;">
-                        <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;">Submit</button>
-                        <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem;">view</button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
+<div class="row">
+  <div class="col-sm-12 card-padding">
+    <div class="card">
+      <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">OFFICE 365</h2>
+      <div class="card2">
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label" for="form12">COMPUTER NAME:</label>
+            <input type="text" class="form-control" [(ngModel)]="computername" />
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label" for="form12">INSTALLED DATE:</label>
+            <input type="date" class="form-control" [(ngModel)]="installeddate" />
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label" for="form12">Current User:</label>
+            <input type="text" class="form-control" [(ngModel)]="username" />
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label" for="form12">Last User:</label>
+            <input type="text" class="form-control" [(ngModel)]="officelastuser " />
+          </div>
         </div>
+
+
+        <!--System end-->
+        <br>
+        <!--SAVE AND VIEW BUTTON-->
+        <div class="text-center" style="padding-bottom:10px;">
+          <button type="button" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;" (click)="onSignIn()">Submit</button>
+          <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+            (click)="onView()">View</button>
+        </div>
+        <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+          styleClass="p-datatable-gridlines">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th>S.No</th>
+              <th *ngFor="let col of columns">
+                {{col.header}}
+              </th>
+              <th>
+                Edit
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
+            <tr>
+              <td class="td-border">
+                <span class="p-column-title">
+                  S.No :
+                </span>
+                <span style="text-align: end;">
+                  {{rowIndex+1}}
+                </span>
+              </td>
+              <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
+                <span class="p-column-title">
+                  {{col.header}} :
+                </span>
+                <span style="text-align: end;"> {{rowData[col.field]}}
+                </span>
+
+              <td class="td-border">
+                <span class="p-column-title">
+                  Edit:
+                </span>
+
+                <button pButton type="button" label="Edit" (click)="onEdit(rowData)"></button>
+
+
+          </ng-template>
+        </p-table>
+      </div>
     </div>
+    <br>
+    <br>
+  </div>
+</div>

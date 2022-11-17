@@ -1,9 +1,12 @@
-.card-padding
+
+
+  .card-padding
 {
-    width: 100%;
-    padding-left:15px;
-    padding-right: 15px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-top:25px;
     padding-bottom: 25px;
+
 }
 .card2
 {
@@ -11,10 +14,4 @@
     padding-right: 25px;
     padding-top:25px;
     padding-bottom: 25px;
-}
-
-.is{
-    height: 30px;
-    width: 200px;
-
 }
