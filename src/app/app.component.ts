@@ -19,7 +19,7 @@ export class AppComponent {
 
       if (events instanceof NavigationEnd) {
 
-        if ((events.url === '/dashboard') || (events.url === '/assetlogin')){
+        if ((events.url === '/dashboard') || (events.url === '/assetlogin') || (events.url === '/newuser')){
 
           this.hidemenu = false;
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newuser',
@@ -28,20 +29,22 @@ export class NewuserComponent implements OnInit {
   LengthErrMsg: boolean=false;
   id: any;
 
-  constructor(private restApiService:RestAPIService) { }
+  constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
   }
   onSignIn() { 
     const params={
       'sno': this.id,
-      'Name':this.Name,
-      'EmployeeId':this.EmployeeId,
-      'Email':this.Email,
-      'password':this.password,
-      'password1':this.password1,
+      'name':this.Name,
+      'employeeid':this.EmployeeId,
+      'email':this.Email,
+      'ppassword':this.password,
+      'cpassword':this.password1,
     };
-    this.restApiService.post(PathConstants.ItRegistration_Post, params).subscribe(res => { })
+    this.restApiService.post(PathConstants.ItRegister_Post, params).subscribe(res => { })
+    this.onView();
+    this.router.navigate(['/assetlogin'])
   }
 
   checkPassword() {

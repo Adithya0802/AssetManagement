@@ -65,6 +65,7 @@ export class EmployeeregisterComponent implements OnInit {
       this.name = selectedRow.name;
       this.email = selectedRow.email;
     }
+    this.onView();
   }
 
 
