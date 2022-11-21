@@ -24,6 +24,7 @@ export class ASystemComponent implements OnInit {
   constructor(private restApiService: RestAPIService) { }
 
   ngOnInit(): void {
+    this.onView();
     this.cols = [
       { field: 'assetid', header: 'assetid', align: 'left !important' },
       { field: 'dateofpurchase', header: 'dateofpurchase', align: 'left !important' },
@@ -52,42 +53,27 @@ export class ASystemComponent implements OnInit {
       'currentuser':this.currentuser,
       'lastuser':this.lastuser,
 };
-    this.restApiService.post(PathConstants.asystem_Post, params).subscribe(res => { })
-    this.onView();
-    this.onClear();
+    this.restApiService.post(PathConstants.asystem_Post, params).subscribe(res => {
+      this.onView();
+      this.onClear();
+     })
   }
   onView(){
     this.restApiService.get(PathConstants.asystem_Get).subscribe(res => { this.data = res })
-
   }
-  onEdit(selectedRow: {
-    lastuser: any;
-    currentuser: any;
-    amount: any;
-    qty: any;
-    monitor: any;
-    rom: any;
-    ram: any;
-    shopname: any;
-    dateofpurchase: any;
-    assetid: any;
-    sno: any;
-  
-  } ) {
-    if (selectedRow !== null && selectedRow !== undefined) {
-      this.id = selectedRow.sno;
-      this.assetid = selectedRow.assetid;
-      this.dateofpurchase = selectedRow.dateofpurchase;
-      this.shopname = selectedRow.shopname;
-      this.ram = selectedRow.ram;
-      this.rom = selectedRow.rom;
-      this.monitor = selectedRow.monitor;
-      this.qty = selectedRow.qty;
-      this.amount = selectedRow.amount;
-      this.currentuser = selectedRow.currentuser;
-      this.lastuser = selectedRow.lastuser;
-    }
-    this.onView();
+  onEdit(rowData : any)
+  {
+    this.id  = rowData.sno;
+    this.assetid =rowData.assetid;
+    this.dateofpurchase = rowData.dateofpurchase;
+    this.shopname  = rowData.shopname;
+    this.ram = rowData.ram;
+    this.rom = rowData.rom;
+    this.monitor = rowData.monitor;
+    this.qty = rowData.qty;
+    this.amount = rowData.amount;
+    this.currentuser = rowData.currentuser;
+    this.lastuser = rowData.lastuser;
   }
   onClear()
   {

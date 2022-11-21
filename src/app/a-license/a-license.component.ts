@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
 import { HostListener } from '@angular/core';
-import { MessageService} from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { ResponseMessage } from 'src/app/CommonModules/messages';
 
 @Component({
@@ -37,7 +37,7 @@ export class ALicenseComponent implements OnInit {
       'name': this.name,
       'productkey': this.productkey,
       'oscurrentuser': this.oscurrentuser,
-      'oslastuser':this.oslastuser,
+      'oslastuser': this.oslastuser,
     };
 
     this.restApiService.post(PathConstants.licence_Post, params).subscribe(res => { })
@@ -45,24 +45,23 @@ export class ALicenseComponent implements OnInit {
   }
 
   onView() {
-    this.restApiService.get(PathConstants.licence_Get).subscribe(res => {this.data = res})
-    }
-    
-  
-  onEdit(selectedRow: {
-    oslastuser: any;
-    oscurrentuser: any;
-    productkey: any;
-    sno: any;
-   name: any;
-  } | null | undefined) {
-    if (selectedRow !== null && selectedRow !== undefined) {
-      this.id = selectedRow.sno;
-      this.name = selectedRow.name;
-      this.productkey= selectedRow.productkey;
-      this.oscurrentuser = selectedRow.oscurrentuser;
-      this.oslastuser= selectedRow.oslastuser;
-    }
+    this.restApiService.get(PathConstants.licence_Get).subscribe(res => { this.data = res })
+  }
+
+
+  onEdit(rowData: any) {
+    this.id = rowData.sno;
+    this.name = rowData.name;
+    this.productkey = rowData.productkey;
+    this.oscurrentuser = rowData.oscurrentuser;
+    this.oslastuser = rowData.name;
     this.onView();
+  }
+
+  onClear() {
+    this.name = null;
+    this.productkey = null;
+    this.oscurrentuser = null;
+    this.oslastuser = null;
   }
 }

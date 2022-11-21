@@ -9,8 +9,8 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'AssetManagement';
 
-  hidemenu: boolean = true;
-  offmenu:boolean=true;
+  hidemenu: boolean = false;
+  offmenu:boolean=false;
 
 
   constructor(private router: Router) {
@@ -21,11 +21,11 @@ export class AppComponent {
 
         if ((events.url === '/dashboard') || (events.url === '/assetlogin') || (events.url === '/newuser')){
 
-          this.hidemenu = false;
+          this.hidemenu = true;
 
         }
         else {
-          this.hidemenu = true;
+          this.hidemenu = false;
         }
       }
 

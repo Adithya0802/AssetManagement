@@ -9,9 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeregisterComponent } from './employeeregister/employeeregister.component';
-import { AssetdetailsComponent } from './assetdetails/assetdetails.component';
-import { ReturnassetComponent } from './returnasset/returnasset.component';
-import { AddassetComponent } from './addasset/addasset.component';
 import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { FormsModule } from '@angular/forms';
@@ -39,10 +36,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MenubarModule } from 'primeng/menubar';
-import { SampleComponent } from './sample/sample.component';
 import {KnobModule} from 'primeng/knob';
 import {KeyFilterModule} from 'primeng/keyfilter';
-import { RegistrationComponent } from './registration/registration.component';
 import {CardModule} from 'primeng/card';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { ASystemComponent } from './a-system/a-system.component';
@@ -60,16 +55,11 @@ import { ItdashboardComponent } from './itdashboard/itdashboard.component';
     EmployeedetailsComponent,
     FooterComponent,
     HeaderComponent,
-    AssetdetailsComponent,
     DashboardComponent,
     EmployeeregisterComponent,
-    ReturnassetComponent,
-    AddassetComponent,
     NewuserComponent,
     ForgetpasswordComponent,
     AssetloginComponent,
-    SampleComponent,
-    RegistrationComponent,
     ASystemComponent,
     ALicenseComponent,
     AOfficeComponent,

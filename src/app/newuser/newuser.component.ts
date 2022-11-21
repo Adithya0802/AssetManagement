@@ -12,86 +12,110 @@ export class NewuserComponent implements OnInit {
   EmployeeId: any;
   name: any;
   email: any;
-  ppassword: any;
-  cpassword: any;
   Email: any;
   Name: any;
   password: any;
-  password1: any;
-  newPassword: any;
-  confirmPassword: any;
+  confrimpassword: any;
   showErrMsg!: boolean;
   showMatchMsg!: boolean;
-  SpecialCharErrMsg: boolean=false;
-  pswdStrongMsg: boolean=false;
-  NumericErrMsg: boolean=false;
-  UpperCaseErrMsg: boolean =false;
-  LengthErrMsg: boolean=false;
+  SpecialCharErrMsg: boolean = false;
+  pswdStrongMsg: boolean = false;
+  NumericErrMsg: boolean = false;
+  UpperCaseErrMsg: boolean = false;
+  LengthErrMsg: boolean = false;
   id: any;
+  disableSave: boolean = false;
+  buttonIsDisabled:boolean=true;
 
   constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  onSignIn() { 
-    const params={
+  public onAddComment(event: string): void {
+    this.buttonIsDisabled=true;
+    let passedString = event;
+    if (/\S/.test(passedString)) {
+        // string is not empty and not just whitespace
+        // activate button
+        this.buttonIsDisabled=false;
+    }
+ }
+  onSignIn() {
+    const params = {
       'sno': this.id,
-      'name':this.Name,
-      'employeeid':this.EmployeeId,
-      'email':this.Email,
-      'ppassword':this.password,
-      'cpassword':this.password1,
+      'name': this.Name,
+      'employeeid': this.EmployeeId,
+      'email': this.Email,
+      'ppassword': this.password,
+      'cpassword': this.confrimpassword,
     };
     this.restApiService.post(PathConstants.ItRegister_Post, params).subscribe(res => { })
     this.onView();
     this.router.navigate(['/assetlogin'])
   }
-
+ 
   checkPassword() {
     if (this.password !== undefined && this.password !== null && this.password.trim() !== '' &&
-    this.password1 !== undefined && this.password1 !== null && this.password.trim() !== '') {
-          if(this.newPassword.trim() !== this.confirmPassword.trim()) {
-            this.showErrMsg = true;
-            this.showMatchMsg = false;
-          } else {
-            this.showErrMsg = false;
-            this.showMatchMsg = true;
-          }
+      this.confrimpassword !== undefined && this.confrimpassword !== null && this.confrimpassword.trim() !== '') {
+      if (this.password !== this.confrimpassword) {
+        this.showErrMsg = true;
+        this.showMatchMsg = false;
+        // this.disableSave = false;
+      } else {
+        this.showErrMsg = false;
+        this.showMatchMsg = true;
+        // this.disableSave = true;
+      }
     } else {
       this.showErrMsg = false;
     }
   }
 
-  check(password:any) {
+  check(password: any) {
 
-     if (password.match(/[@$!%*?&]/g)) {
-     this.SpecialCharErrMsg = false;
-     } else {
-     this.SpecialCharErrMsg = true;
-     this.pswdStrongMsg = false;
-    }    
-   if (password.match(/[0-9]/g)) {   
-     this.NumericErrMsg = false;
-    } else {    
-    this.NumericErrMsg = true;    
-    this.pswdStrongMsg = false;    
-    }    
-    if (password.match(/[A-Z]/g)) {    
-    this.UpperCaseErrMsg = false;    
-    } else {    
-    this.UpperCaseErrMsg = true;    
-    this.pswdStrongMsg = false;    
-    }    
-    if (password.length >= 8) {    
-    this.LengthErrMsg = false;    
-    } else {    
-    this.LengthErrMsg = true;    
-    this.pswdStrongMsg = false;
+    if (password.match(/[@$!%*?&]/g)) {
+      this.SpecialCharErrMsg = false;
+      this.disableSave = true;
+    } else {
+      this.SpecialCharErrMsg = true;
+      this.pswdStrongMsg = false;
+      this.disableSave = false;
     }
-    if (password.match(/[@$!%*?&]/g) && password.match(/[0-9]/g) && password.match(/[A-Z]/g) && password.length > 8)
-    this.pswdStrongMsg = true;
+    if (password.match(/[0-9]/g)) {
+      this.NumericErrMsg = false;
+      this.disableSave = true;
+    } else {
+      this.NumericErrMsg = true;
+      this.pswdStrongMsg = false;
+      this.disableSave = false;
+    }
+    if (password.match(/[A-Z]/g)) {
+      this.UpperCaseErrMsg = false;
+      this.disableSave = true;
+    } else {
+      this.UpperCaseErrMsg = true;
+      this.pswdStrongMsg = false;
+      this.disableSave = false;
+    }
+    if (password.length >= 8) {
+      this.LengthErrMsg = false;
+      this.disableSave = true;
+    } else {
+      this.LengthErrMsg = true;
+      this.pswdStrongMsg = false;
+      this.disableSave = false;
+    }
+    if (password.match(/[@$!%*?&]/g) && password.match(/[0-9]/g) && password.match(/[A-Z]/g) && password.length > 8) {
+      this.pswdStrongMsg = true;
+      this.disableSave = true;
+    } else {
+      // this.disableSave = false;
+      this.password = '';
+    }
   }
-  onView(){
- this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res =>{ })
- }
+
+
+  onView() {
+    this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => { })
+  }
 }

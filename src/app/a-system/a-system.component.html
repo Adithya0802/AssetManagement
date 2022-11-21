@@ -64,23 +64,20 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-3">
+                          <label class="form-label" for="form12">Current User:</label>
+                          <input type="text" class="form-control" [(ngModel)]="currentuser"/>
                         </div>
                         <div class="col-sm-3">
-                            <label class="form-label" for="form12">Current User:</label>
-                            <input type="text" class="form-control" [(ngModel)]="currentuser"/>
+                          <label class="form-label" for="form12">Last User:</label>
+                          <input type="text" class="form-control" [(ngModel)]="lastuser"/>
                         </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form12">Last User:</label>
-                            <input type="text" class="form-control" [(ngModel)]="lastuser"/>
-                        </div>
-                        <div class="col-sm-3">
-                        </div>
+                      
                     </div>
                     <br>
                     <!--SAVE AND VIEW BUTTON-->
                     <div class="text-center" style="padding-bottom:10px;">
                         <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 10px;" (click)="onSubmit()">Submit</button>
+                            style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 10px;" [disabled]="(!assetid || !dateofpurchase || !shopname || !ram || !rom || !monitor || !qty || !amount || !currentuser || !lastuser )" (click)="onSubmit()">Submit</button>
                     </div>
                 </div>
 

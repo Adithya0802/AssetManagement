@@ -1,107 +1,101 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <section class="vh-100">
   <nav class="navbar navbar-dark bg-primary">
     <h2 style="color:white;padding-left: 5px;">ASSET MANAGEMENT</h2>
-    </nav>
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid" alt="Sample image">
+  </nav>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h2 style="text-align: center;">IT Registration </h2>
+        <hr>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter your  Name"
+            maxlength="40" required [(ngModel)]="Name">
+          <label class="form-label" for="form3Example3"> Name</label>
+          <span class="form-mandatory-field">*</span>
         </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <!-- <form> -->
-            <h2 style="text-align: center;">IT Registration </h2>
-            <hr>
-          <!-- Email input -->
-            <div class="form-outline mb-4">
-                <input type="text" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter your  Name" maxlength="40" required  [(ngModel)]="Name">
-                <label class="form-label" for="form3Example3"> Name</label>
-                <span class="form-mandatory-field">*</span>
-              </div>
-              <div class="form-outline mb-4">
-                <input type="text" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter Employee Id"   [(ngModel)]="EmployeeId">
-                <label class="form-label" for="form3Example3">Employee Id</label>
-                <span class="form-mandatory-field">*</span>
-              </div>
-            <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter a valid email address" [(ngModel)]="Email">
-              <label class="form-label" for="form3Example3">Email address</label>
-              <span class="form-mandatory-field">*</span>
-            </div>
-           <!-- Password input -->
-           <!-- Password input -->
-           <div class="form-outline mb-4">
-            <div><label for="_confirmpwd">password</label></div>
-             <input type="email" id="form3Example3" class="form-control form-control-lg"
-               placeholder="Enter the password" [(ngModel)]="password"
-               minlength="8" maxlength="8" (input)="check(password)" required
-               >
-              </div>
-              <div class="form-outline mb-4">
-            <div><label for="_confirmpwd">ConfirmPassword</label></div>
+        <div class="form-outline mb-4">
+          <input type="text" id="form3Example3" class="form-control form-control-lg" placeholder="Enter Employee Id"
+            [(ngModel)]="EmployeeId">
+          <label class="form-label" for="form3Example3">Employee Id</label>
+          <span class="form-mandatory-field">*</span>
+        </div>
+        <div class="form-outline mb-4">
+          <input type="email" id="form3Example3" class="form-control form-control-lg"
+            placeholder="Enter a valid email address" [(ngModel)]="Email">
+          <label class="form-label" for="form3Example3">Email address</label>
+          <span class="form-mandatory-field">*</span>
+        </div>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <div><label for="_confirmpwd">password</label></div>
+          <input type="password" id="form3Example3" class="form-control form-control-lg" placeholder="Enter the password" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/"
+            [(ngModel)]="password" minlength="8" maxlength="8" (input)="check(password)" required>
+              
+        </div>
+        
+        <div class="form-outline mb-4">
+          <div><label for="_confirmpwd">ConfirmPassword</label></div>
+           
+          <div><input type="password" id="form3Example3" class="form-control form-control-lg"
+              placeholder="Re enter the above password" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required [(ngModel)]="confrimpassword" minlength="8" maxlength="8"
+              (input)="checkPassword()" ></div>
+             
+          <div *ngIf="showErrMsg" style="color: rgb(250, 15, 62); font-size: 12px;">Password did
 
-           <div><input type="email" id="form3Example3" class="form-control form-control-lg"
-            placeholder="Re enter the above password" [(ngModel)]="password1"
-            minlength="8" maxlength="8" (input)="check(password)" required
-            ></div>
-            
-            <div *ngIf="showErrMsg" style="color: rgb(250, 15, 62); font-size: 12px;">Password did
-            
             not match</div>
-            
-        <div *ngIf="showMatchMsg" style="color: rgb(28, 182, 92); font-size: 12px; text-align: left;">Password
-            
-         matched!</div>
-            
-            
-            
-             <div *ngIf="SpecialCharErrMsg"
-            
-            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one Special  
+
+          <div *ngIf="showMatchMsg" style="color: rgb(28, 182, 92); font-size: 12px; text-align: left;">Password
+
+            matched!</div>
+
+            <div *ngIf="pswdStrongMsg"
+
+          style="color: rgb(28, 182, 92); font-size: 12px; text-align: left">Strong Password!</div>
+
+
+          <div *ngIf="SpecialCharErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one
+            Special
             Character must!</div>
-            
-            <div *ngIf="NumericErrMsg"
-            
-            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one Numeric(0-9)
-            
-             must!</div>
-            
-             <div *ngIf="UpperCaseErrMsg"
-            
-            style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">Atleast one
-            
-           Uppercase(A-Z) must!</div>
-            
-             <div *ngIf="LengthErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">
-            
-             Minimum 8 Characters!</div>
-  
-            <div class="d-flex justify-content-between align-items-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-0">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                <label class="form-check-label" for="form2Example3">
-                  Remember me
-                </label>
-              </div>
-             
+
+          <div *ngIf="NumericErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left;">Atleast one
+            Numeric(0-9)
+
+            must!</div>
+
+          <div *ngIf="UpperCaseErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">Atleast one
+
+            Uppercase(A-Z) must!</div>
+
+          <div *ngIf="LengthErrMsg" style="color: rgb(250, 15, 62); font-size: 12px; text-align: left">
+
+            Minimum 8 Characters!</div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Remember me
+              </label>
             </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onSignIn()">Submit</button>
-                <!-- <button type="button" class="btn btn-primary btn-lg" -->
-                <!-- style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onView()">view</button> -->
-             
-            </div>
-  
+
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
+            [disabled]="(!Name || !EmployeeId || !Email || !password || !confrimpassword || !disableSave )"  (click)="onSignIn()" >Submit</button>
+            <!-- <button type="button" class="btn btn-primary btn-lg" -->
+            <!-- style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onView()">view</button> -->
+          </div>
+
           <!-- </form> -->
         </div>
       </div>
     </div>
-    
-  
