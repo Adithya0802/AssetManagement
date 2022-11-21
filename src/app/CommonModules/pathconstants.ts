@@ -17,4 +17,10 @@ export class PathConstants {
     public static readonly officespace_Get='officespace';
     public static readonly asystem_Post='asystem/Post';
     public static readonly asystem_Get='asystem';
+    public static readonly donglecount_Get='donglecount';
+    public static readonly officecount_Get='officecount';
+    public static readonly printercount_Get='printercount';
+
 }
+
+

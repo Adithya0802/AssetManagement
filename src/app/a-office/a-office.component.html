@@ -26,8 +26,7 @@
         <div class="text-center" style="padding-bottom:10px;">
           <button type="button" class="btn btn-primary btn-lg"
             style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;" (click)="onSignIn()">Submit</button>
-          <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"
-            (click)="onView()">View</button>
+         
         </div>
         <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
           styleClass="p-datatable-gridlines">
@@ -63,9 +62,7 @@
                 <span class="p-column-title">
                   Edit:
                 </span>
-
                 <button pButton type="button" label="Edit" (click)="onEdit(rowData)"></button>
-
 
           </ng-template>
         </p-table>

@@ -18,6 +18,7 @@ export class ADongleComponent implements OnInit {
   id: any;
   cols: any;
   data: any[] = [];
+  count:any;
 
 
 
