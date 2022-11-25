@@ -41,6 +41,7 @@
                     <div class="text-center" style="padding-bottom:10px;">
                         <button type="button" class="btn btn-primary btn-lg"
                             style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;"
+                            [disabled]="(!printername|| !printermodel || !purchasedlocation || !printerstatus ||!currentuser ||!lastuser)"
                             (click)="onSignIn()">Submit</button>
                     </div>
                 </div>
@@ -79,7 +80,6 @@
                             <span class="p-column-title">
                                 Edit:
                             </span>
-
                             <button pButton type="button" label="Edit" (click)="onEdit(rowData)"></button>
                 </ng-template>
             </p-table>

@@ -47,7 +47,7 @@
                 <br>
                 <div class="text-center" style="padding-bottom:10px;">
                     <button type="button" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;"
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;" [disabled]="(!donglecompanyname || !donglenumber || !dongleimeino || !donglepurchasedlocation || !donglestatus || !users || !donglelastuser)"
                         (click)="onSignIn()">Submit</button>`
                 </div>
             </div>

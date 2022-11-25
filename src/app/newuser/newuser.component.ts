@@ -26,6 +26,8 @@ export class NewuserComponent implements OnInit {
   id: any;
   disableSave: boolean = false;
   validatePassword: boolean = false;
+  showPassword: boolean = false;
+  showcPassword: boolean = false;
   constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
@@ -102,5 +104,11 @@ export class NewuserComponent implements OnInit {
 
   onView() {
     this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => { })
+  }
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+  toggleConformPasswordVisibility(): void {
+    this.showcPassword = !this.showcPassword;
   }
 }

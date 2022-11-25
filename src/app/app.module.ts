@@ -48,6 +48,8 @@ import { AOspaceComponent } from './a-ospace/a-ospace.component';
 import { AddorreturnComponent } from './addorreturn/addorreturn.component';
 import { ItdashboardComponent } from './itdashboard/itdashboard.component';
 import { DatabComponent } from './datab/datab.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,9 @@ import { DatabComponent } from './datab/datab.component';
     KnobModule,
     KeyFilterModule,
     BrowserAnimationsModule,
-    MultiSelectModule
+    MultiSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
     
   ],
   providers: [MessageService],

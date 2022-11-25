@@ -419,8 +419,8 @@ html {
 
 .p-button {
     color: #fff;
-    background: #105c61 !important;
-    border: 1px solid #208991 !important;
+    background: #0275d8!important;
+    border: 1px solid #0275d8 !important;
     padding: .5rem 1rem;
     font-size: 1rem;
     transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s;
@@ -577,9 +577,9 @@ html {
 
 .p-datatable .p-datatable-footer,
 .p-datatable .p-datatable-thead>tr>th {
-    background: #099099 !important;
+    background: #0288d1 !important;
     color: whitesmoke !important;
-    border-color: solid #208991 !important;
+    border-color: solid #0288d1 !important;
     padding: 0.5rem !important;
 }
 

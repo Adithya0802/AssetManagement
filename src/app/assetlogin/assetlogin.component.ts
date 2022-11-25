@@ -12,6 +12,7 @@ export class AssetloginComponent implements OnInit {
   employeeId: any;
   password: any;
   data: any[] = [];
+  public showPassword: boolean = false;
 
   constructor(private restApiService: RestAPIService, private router: Router) { }
 
@@ -33,6 +34,9 @@ export class AssetloginComponent implements OnInit {
         console.log('no match');
       }
     })
+  }
+ public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 }
 
