@@ -18,23 +18,17 @@ export class APspComponent implements OnInit {
   cols: any;
   data: any[] = [];
 
-
-
   constructor(private restApiService: RestAPIService) { }
 
   ngOnInit(): void {
     this.onView();
-
     this.cols = [
-
       { field: 'printername', header: 'printername', align: 'left !important' },
       { field: 'printermodel', header: 'printermodel', align: 'left !important' },
       { field: 'purchasedlocation', header: 'purchasedlocation', align: 'right !important' },
       { field: 'printerstatus', header: 'printerstatus', align: 'left !important' },
       { field: 'currentuser', header: 'currentuser', align: 'left !important' },
       { field: 'lastuser', header: 'lastuser', align: 'left !important' },
-
-
     ]
   }
 
@@ -47,47 +41,32 @@ export class APspComponent implements OnInit {
       'printerstatus': this.printerstatus,
       'currentuser': this.currentuser,
       'lastuser': this.lastuser,
-
-
     };
-
     this.restApiService.post(PathConstants.printer_Post, params).subscribe(res => { })
-
-
-
+    this.onClear();
   }
 
   onView() {
     this.restApiService.get(PathConstants.printer_Get).subscribe(res => { this.data = res })
-
-
-
-  }
-  onEdit(selectedRow: {
-    lastuser: any;
-    currentuser: any;
-    printerstatus: any;
-    purchasedlocation: any;
-    printermodel: any;
-    printername: any;
-    sno: any;
-
   }
 
-    | null | undefined) {
+  onEdit(rowData: any) {
+    this.id = rowData.sno;
+    this.printername = rowData.printername;
+    this.printermodel = rowData.printermodel;
+    this.purchasedlocation = rowData.purchasedlocation;
+    this.printerstatus = rowData.printerstatus;
+    this.currentuser = rowData.currentuser;
+    this.lastuser = rowData.lastuser
+  }
 
-    if (selectedRow !== null && selectedRow !== undefined) {
-
-      this.id = selectedRow.sno;
-      this.printername = selectedRow.printername;
-      this.printermodel = selectedRow.printermodel;
-      this.purchasedlocation = selectedRow.purchasedlocation;
-      this.printerstatus = selectedRow.printerstatus;
-      this.currentuser = selectedRow.currentuser;
-      this.lastuser = selectedRow.lastuser
-
-
-    }
-
+  onClear() {
+    this.printername = null;
+    this.printermodel = null;
+    this.purchasedlocation = null;
+    this.printerstatus = null;
+    this.currentuser = null;
+    this.lastuser = null;
   }
 }
+

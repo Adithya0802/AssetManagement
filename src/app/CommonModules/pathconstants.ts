@@ -20,7 +20,8 @@ export class PathConstants {
     public static readonly donglecount_Get='donglecount';
     public static readonly officecount_Get='officecount';
     public static readonly printercount_Get='printercount';
-
+    public static readonly systemcount_Get='systemcount';
+    
 }
 
 

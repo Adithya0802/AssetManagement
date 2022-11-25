@@ -25,21 +25,11 @@ export class NewuserComponent implements OnInit {
   LengthErrMsg: boolean = false;
   id: any;
   disableSave: boolean = false;
-  buttonIsDisabled:boolean=true;
-
+  validatePassword: boolean = false;
   constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
   }
-  public onAddComment(event: string): void {
-    this.buttonIsDisabled=true;
-    let passedString = event;
-    if (/\S/.test(passedString)) {
-        // string is not empty and not just whitespace
-        // activate button
-        this.buttonIsDisabled=false;
-    }
- }
   onSignIn() {
     const params = {
       'sno': this.id,
@@ -53,67 +43,62 @@ export class NewuserComponent implements OnInit {
     this.onView();
     this.router.navigate(['/assetlogin'])
   }
- 
+
   checkPassword() {
     if (this.password !== undefined && this.password !== null && this.password.trim() !== '' &&
       this.confrimpassword !== undefined && this.confrimpassword !== null && this.confrimpassword.trim() !== '') {
       if (this.password !== this.confrimpassword) {
         this.showErrMsg = true;
         this.showMatchMsg = false;
-        // this.disableSave = false;
+        this.disableSave = false;
       } else {
         this.showErrMsg = false;
         this.showMatchMsg = true;
-        // this.disableSave = true;
+        this.disableSave = true;
       }
     } else {
       this.showErrMsg = false;
     }
   }
 
-  check(password: any) {
+  check(confrimpassword: any) {
 
-    if (password.match(/[@$!%*?&]/g)) {
+    if (confrimpassword.match(/[@$!%*?&]/g)) {
       this.SpecialCharErrMsg = false;
-      this.disableSave = true;
+      this.validatePassword = true;
     } else {
       this.SpecialCharErrMsg = true;
       this.pswdStrongMsg = false;
-      this.disableSave = false;
+      this.validatePassword = false;
     }
-    if (password.match(/[0-9]/g)) {
+    if (confrimpassword.match(/[0-9]/g)) {
       this.NumericErrMsg = false;
-      this.disableSave = true;
+      this.validatePassword = true;
     } else {
       this.NumericErrMsg = true;
       this.pswdStrongMsg = false;
-      this.disableSave = false;
+      this.validatePassword = false;
     }
-    if (password.match(/[A-Z]/g)) {
+    if (confrimpassword.match(/[A-Z]/g)) {
       this.UpperCaseErrMsg = false;
-      this.disableSave = true;
+      this.validatePassword = true;
     } else {
       this.UpperCaseErrMsg = true;
       this.pswdStrongMsg = false;
-      this.disableSave = false;
+      this.validatePassword = false;
     }
-    if (password.length >= 8) {
+    if (confrimpassword.length >= 8) {
       this.LengthErrMsg = false;
-      this.disableSave = true;
+      this.validatePassword = true;
     } else {
       this.LengthErrMsg = true;
       this.pswdStrongMsg = false;
-      this.disableSave = false;
+      this.validatePassword = false;
     }
-    if (password.match(/[@$!%*?&]/g) && password.match(/[0-9]/g) && password.match(/[A-Z]/g) && password.length > 8) {
+    if (confrimpassword.match(/[@$!%*?&]/g) && confrimpassword.match(/[0-9]/g) && confrimpassword.match(/[A-Z]/g) && confrimpassword.length > 8) {
       this.pswdStrongMsg = true;
-      this.disableSave = true;
-    } else {
-      // this.disableSave = false;
-      this.password = '';
     }
   }
-
 
   onView() {
     this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => { })

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import { AssetloginComponent } from './assetlogin/assetlogin.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -48,11 +47,11 @@ import { APspComponent } from './a-psp/a-psp.component';
 import { AOspaceComponent } from './a-ospace/a-ospace.component';
 import { AddorreturnComponent } from './addorreturn/addorreturn.component';
 import { ItdashboardComponent } from './itdashboard/itdashboard.component';
+import { DatabComponent } from './datab/datab.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeedetailsComponent,
     FooterComponent,
     HeaderComponent,
     DashboardComponent,
@@ -67,7 +66,8 @@ import { ItdashboardComponent } from './itdashboard/itdashboard.component';
     APspComponent,
     AOspaceComponent,
     AddorreturnComponent,
-    ItdashboardComponent
+    ItdashboardComponent,
+    DatabComponent,
   
   ],
   imports: [

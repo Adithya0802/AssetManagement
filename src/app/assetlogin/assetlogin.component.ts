@@ -13,28 +13,26 @@ export class AssetloginComponent implements OnInit {
   password: any;
   data: any[] = [];
 
-
   constructor(private restApiService: RestAPIService, private router: Router) { }
 
   ngOnInit(): void {
-    this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => { 
-      this.data = res; 
-      console.log('e',this.data)
+    this.restApiService.get(PathConstants.ItRegister_Get).subscribe(res => {
+      this.data = res;
+      console.log('e', this.data)
     })
   }
   onSignIn() {
-    console.log('data',this.data)
-    console.log('1',this.employeeId)
-    console.log('1',this.password)
     this.data.forEach((i: any) => {
-      if (i.cpassword === this.password) {
-        console.log('done')
-          this.router.navigate(['/itdashboard'])
+      if (i.email === this.employeeId && i.cpassword === this.password) {
+        console.log('sql pass', i.cpassword);
+        console.log('Ui pass', this.password);
+        console.log('sql mail', i.email);
+        console.log('Ui mail', this.employeeId);
+        this.router.navigate(['/itdashboard'])
       } else {
-        console.log('no match')
+        console.log('no match');
       }
     })
-
   }
 }
 

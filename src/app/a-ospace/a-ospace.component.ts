@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
-import { HostListener } from '@angular/core';
-import { MessageService } from 'primeng/api';
-import { ResponseMessage } from 'src/app/CommonModules/messages';
 
 @Component({
   selector: 'app-a-ospace',
@@ -19,19 +16,17 @@ export class AOspaceComponent implements OnInit {
   cols: any;
   data: any[] = [];
   id: any;
+
   constructor(private restApiService: RestAPIService) { }
 
   ngOnInit(): void {
-
+    this.onView();
     this.cols = [
       { field: 'officelocation', header: 'officelocation', align: 'left !important' },
-
       { field: 'seatno', header: 'seatno', align: 'left !important' },
-
       { field: 'officename', header: 'officename', align: 'left !important' },
       { field: 'assetnumber', header: 'assetnumber', align: 'left !important' },
       { field: 'occupiedseat', header: 'occupiedseat', align: 'left !important' },
-
     ]
   }
 
@@ -46,8 +41,8 @@ export class AOspaceComponent implements OnInit {
     };
     this.restApiService.post(PathConstants.officespace_Post, params).subscribe(res => { })
     this.onView();
+    this.onClear();
   }
-
 
   onView() {
     this.restApiService.get(PathConstants.officespace_Get).subscribe(res => { this.data = res })

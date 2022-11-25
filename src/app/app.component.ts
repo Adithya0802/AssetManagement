@@ -9,36 +9,31 @@ import { NavigationEnd, Router } from '@angular/router';
 export class AppComponent {
   title = 'AssetManagement';
 
-  hidemenu: boolean = false;
-  offmenu:boolean=false;
+  hideheader: boolean = false;
+  hideheader2: boolean = false;
+  offmenu: boolean = false;
 
 
   constructor(private router: Router) {
-
     this.router.events.subscribe((events) => {
-
       if (events instanceof NavigationEnd) {
-
-        if ((events.url === '/dashboard') || (events.url === '/assetlogin') || (events.url === '/newuser')){
-
-          this.hidemenu = true;
-
+        if ((events.url === '/dashboard') || (events.url === '/assetlogin') || (events.url === '/newuser')) {
+          this.hideheader = true;
         }
         else {
-          this.hidemenu = false;
+          this.hideheader = false;
         }
       }
-
       if (events instanceof NavigationEnd) {
-        if ((events.url === '/asystem') || (events.url === '/alicense') || (events.url === '/adongle')|| (events.url === '/aoffice')|| (events.url === '/apsp')|| (events.url === '/addreturnasset') || (events.url === '/aospace') || (events.url === '/itdashboard')){
-
+        if ((events.url === '/asystem') || (events.url === '/alicense') || (events.url === '/adongle') || (events.url === '/aoffice') || (events.url === '/apsp') || (events.url === '/addreturnasset') || (events.url === '/aospace') || (events.url === '/itdashboard')) {
+          console.log('1')
           this.offmenu = true;
+        }
+        else {
+          console.log('2')
+          this.offmenu = false;
+        }
       }
-      else {
-        this.offmenu = false;
-      }
-    }
     })
-  
-}
+  }
 }

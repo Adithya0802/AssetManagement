@@ -11,13 +11,9 @@ export class ItdashboardComponent implements OnInit {
   data: any;
   data1: any;
   data2: any;
-
-
-  constructor(private restApiService: RestAPIService) { }
-
-  ngOnInit(): void {
-
-
+  data3: any;
+constructor(private restApiService: RestAPIService) { }
+ ngOnInit(): void {
     this.restApiService.get(PathConstants.donglecount_Get).subscribe(res => {
       console.log('enter', this.data)
       this.data = res[0].no;
@@ -31,13 +27,15 @@ export class ItdashboardComponent implements OnInit {
     })
 
     this.restApiService.get(PathConstants.printercount_Get).subscribe(res => {
-      console.log('enter', this.data1)
+      console.log('enter', this.data2)
       this.data2 = res[0].nos;
 
     })
 
+    this.restApiService.get(PathConstants.systemcount_Get).subscribe(res => {
+      console.log('enter', this.data3)
+      this.data3 = res[0].noss;
 
-
-
+    })
   }
 }

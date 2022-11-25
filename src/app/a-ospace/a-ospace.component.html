@@ -1,96 +1,88 @@
 <div class="row">
-    <div class="col-sm-12 card-padding">
-        <div class="card">
-            <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">OFFICE SPACE
-                DETAILS</h2>
-            <div class="card2">
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form3Example2">OFFICE LOCATION:</label>
-                        <select class="form-select" aria-label="Default select example" [(ngModel)]="officelocation">
-                            <option value="1">select</option>
-                            <option value="CHENNAI">CHENNAI</option>
-                            <option value="BANGLORE">BANGLORE</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">NO OF SEATS:</label>
-                        <input type="text" class="form-control"  [(ngModel)]="seatno"/>
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">OFFICE NAME:</label>
-                        <input type="text" class="form-control" [(ngModel)]="officename" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-label" for="form12">ASSET NUMBER:</label>
-                        <input type="text" class="form-control" [(ngModel)]="assetnumber" />
-                    </div>
-                    <div style="width:325px;height:30px;">
-                        <label style="text-align: center;"class="form-label" for="form12">OCCUPIED SEATS:</label>
-                        <input type="text" class="form-control" [(ngModel)]="occupiedseat"/>
-                    </div>
-                </div>
-                
-                    
-                
-                <!--System end-->
-                <br>
-                <!--SAVE AND VIEW BUTTON-->
-                <div class="text-center" style="padding-bottom:10px;">
-                    <button type="button" class="btn btn-primary btn-lg"
-                        style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;" (click)="onSignIn()">Submit</button>
-                   
-                </div>
-            </div>
-
+  <div class="col-sm-12 card-padding">
+    <div class="card">
+      <h2 style="padding-left:15px;background-color:#0275d8;border-radius: 10px;color: white;">OFFICE SPACE
+        DETAILS</h2>
+      <div class="card2">
+        <div class="row">
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form3Example2">OFFICE LOCATION:</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="officelocation">
+              <option value="1">select</option>
+              <option value="CHENNAI">CHENNAI</option>
+              <option value="BANGLORE">BANGLORE</option>
+            </select>
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">NO OF SEATS:</label>
+            <input type="text" class="form-control" [(ngModel)]="seatno" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">OFFICE NAME:</label>
+            <input type="text" class="form-control" [(ngModel)]="officename" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">ASSET NUMBER:</label>
+            <input type="text" class="form-control" [(ngModel)]="assetnumber" />
+          </div>
+          <div class="col-sm-2 is">
+            <label style="text-align: center;" class="form-label" for="form12">OCCUPIED SEATS:</label>
+            <input type="text" class="form-control" [(ngModel)]="occupiedseat" />
+          </div>
         </div>
         <br>
         <br>
-
-        <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" responsiveLayout="scroll"
-        styleClass="p-datatable-gridlines">
-        <ng-template pTemplate="header" let-columns>
-          <tr>
-            <th>S.No</th>
-            <th *ngFor="let col of columns">
-              {{col.header}}
-            </th>
-            <th>
-              Edit/Update
-            </th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
-          <tr>
-            <td class="td-border">
-              <span class="p-column-title">
-                S.No :
-              </span>
-              <span style="text-align: end;">
-                {{rowIndex+1}}
-                </span>
-                </td>
-                <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
-              <span class="p-column-title">
-                {{col.header}} :
-              </span>
-              <span style="text-align: end;"> {{rowData[col.field]}}
-              </span>
-
-            </td>
-            <td class="td-border">
-              <span class="p-column-title">
-                Edit/Update :
-              </span>
-              <span><button icon="pi pi-pencil" pButton type="button"  (click)="onEdit(rowData)" >
-                  Edit
-                </button></span>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
+        <!--SAVE AND VIEW BUTTON-->
+        <div class="text-center" style="padding-bottom:10px;">
+          <button type="button" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;margin-right: 10px;" (click)="onSignIn()">Submit</button>
+        </div>
+      </div>
     </div>
-
-
+    <br>
+    <br>
+    <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" responsiveLayout="scroll"
+      styleClass="p-datatable-gridlines">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th>S.No</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+          <th>
+            Edit/Update
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
+        <tr>
+          <td class="td-border">
+            <span class="p-column-title">
+              S.No :
+            </span>
+            <span style="text-align: end;">
+              {{rowIndex+1}}
+            </span>
+          </td>
+          <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
+            <span class="p-column-title">
+              {{col.header}} :
+            </span>
+            <span style="text-align: end;"> {{rowData[col.field]}}
+            </span>
+          </td>
+          <td class="td-border">
+            <span class="p-column-title">
+              Edit/Update :
+            </span>
+            <span><button icon="pi pi-pencil" pButton type="button" (click)="onEdit(rowData)">
+                Edit
+              </button></span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br>
+    <br>
+  </div>
 </div>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
 import { AssetloginComponent } from './assetlogin/assetlogin.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +15,7 @@ import { APspComponent } from './a-psp/a-psp.component';
 import { AOspaceComponent } from './a-ospace/a-ospace.component';
 import { AddorreturnComponent } from './addorreturn/addorreturn.component';
 import { ItdashboardComponent } from './itdashboard/itdashboard.component';
+import { DatabComponent } from './datab/datab.component';
 
 
 const routes: Routes = [
@@ -23,7 +23,6 @@ const routes: Routes = [
   {path:'assetlogin',component:AssetloginComponent},
   {path:'footer',component:FooterComponent},
   {path:'header',component:HeaderComponent},
-  { path: 'employeedetails',component:EmployeedetailsComponent},
   { path:'dashboard',component:DashboardComponent},
   { path:'employeeregister',component:EmployeeregisterComponent},
   { path:'newuser',component:NewuserComponent},
@@ -36,6 +35,7 @@ const routes: Routes = [
   { path:'aospace',component:AOspaceComponent},
   { path:'addorreturn',component:AddorreturnComponent},
   { path:'itdashboard',component:ItdashboardComponent},
+  { path:'datab',component:DatabComponent},
 ];
 
 @NgModule({

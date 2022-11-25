@@ -1,60 +1,47 @@
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <section class="vh-100">
-   <nav class="navbar navbar-dark bg-primary">
-  <h2 style="color:white;padding-left: 5px;">ASSET MANAGEMENT</h2>
+  <nav class="navbar navbar-dark bg-primary">
+    <h2 style="color:white;padding-left: 5px;">ASSET MANAGEMENT</h2>
   </nav>
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://rurutek.com/jio/assets/img/login-animate.gif"
-            class="img-fluid" alt="Sample image">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://rurutek.com/jio/assets/img/login-animate.gif" class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h2 style="text-align:center">LOGIN</h2>
+        <hr>
+        <div class="form-outline mb-4">
+          <input type="text" class="form-control form-control-lg" [(ngModel)]="employeeId"
+            placeholder="Enter a valid email" required />
+          <label class="form-label" for="form3Example3">Email ID</label>
+          <span class="form-mandatory-field">*</span>
         </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <h2 style="text-align:center">LOGIN</h2>
-            <hr>
-          <!-- <form> -->
-           
-         
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form3Example3" class="form-control form-control-lg" [(ngModel)]="employeeId"
-                placeholder="Enter a valid employee id" required/>
-              <label class="form-label" for="form3Example3">Employee ID</label>
-              <span class="form-mandatory-field">*</span>
-            </div>
-  
-            <!-- Password input -->
-            <div class="form-outline mb-3">
-              <input type="password" class="form-control form-control-lg" 
-              [(ngModel)]="password"
-                placeholder="Enter password"  required/>
-              <label class="form-label" for="form3Example4">Password</label>
-              <span class="form-mandatory-field">*</span>
-            </div>
-  
-            <div class="d-flex justify-content-between align-items-center">
-              <!-- Checkbox -->
-              <div class="form-check mb-0">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                <label class="form-check-label" for="form2Example3">
-                  Remember me
-                </label>
-              </div>
-              <a href="forgetpassword" class="text-body"   >Forgot password?</a>
-            </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg" 
-                style="padding-left: 2.5rem; padding-right: 2.5rem; text-align:center;" [disabled]="(!employeeId || !password)"  (click)="onSignIn()">Login</button>
-                 <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? Register using link below</p>
-                 <a href="newuser"class="link-danger">IT Register</a>
-                 <!-- <a href="employeeregister"class="link-danger">Employee Register</a> -->
-            </div>
-  
-        
+        <div class="form-outline mb-3">
+          <input type="password" class="form-control form-control-lg" [(ngModel)]="password"
+            placeholder="Enter password" required />
+          <label class="form-label" for="form3Example4">Password</label>
+          <span class="form-mandatory-field">*</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="form-check mb-0">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+            <label class="form-check-label" for="form2Example3">
+              Remember me
+            </label>
+          </div>
+          <a href="forgetpassword" class="text-body">Forgot password?</a>
+        </div>
+        <div class="text-center text-lg-start mt-4 pt-2">
+          <button type="button" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem; text-align:center;"
+            [disabled]="(!employeeId || !password)" (click)="onSignIn()">Login</button>
+          <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? Register using link below</p>
+          <a href="newuser" class="link-danger">IT Register</a>
+          <!-- <a href="employeeregister"class="link-danger">Employee Register</a> -->
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

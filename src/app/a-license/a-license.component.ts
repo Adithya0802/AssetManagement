@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PathConstants } from '../CommonModules/pathconstants';
 import { RestAPIService } from '../restapi.service';
-import { HostListener } from '@angular/core';
-import { MessageService } from 'primeng/api';
-import { ResponseMessage } from 'src/app/CommonModules/messages';
 
 @Component({
   selector: 'app-a-license',
@@ -22,6 +19,7 @@ export class ALicenseComponent implements OnInit {
   constructor(private restApiService: RestAPIService) { }
 
   ngOnInit(): void {
+    this.onView();
     this.cols = [
       { field: 'name', header: 'NAME', align: 'left !important' },
 
@@ -42,14 +40,14 @@ export class ALicenseComponent implements OnInit {
 
     this.restApiService.post(PathConstants.licence_Post, params).subscribe(res => { })
     this.onView();
+    this.onClear();
   }
 
   onView() {
     this.restApiService.get(PathConstants.licence_Get).subscribe(res => { this.data = res })
   }
 
-
-  onEdit(rowData: any) {
+ onEdit(rowData: any) {
     this.id = rowData.sno;
     this.name = rowData.name;
     this.productkey = rowData.productkey;

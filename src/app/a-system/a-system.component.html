@@ -1,129 +1,128 @@
+<div class="row">
+  <div class="col-sm-12 card-padding">
+    <div class="card">
+      <h2 style="background-color:#0275d8; padding-left:15px;border-radius: 10px;color: white;">SYSTEM</h2>
+      <div class="card2">
+        <div class="row">
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">ASSET ID:</label>
+            <input type="text" class="form-control" [(ngModel)]="assetid" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">Date of Purchase:</label>
+            <input type="date" class="form-control" [(ngModel)]="dateofpurchase" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form3Example2">Shop Name:</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="shopname">
+              <option value="1">select</option>
+              <option value="AMAZON">Amazon</option>
+              <option value="FLIPKART">Flipkart</option>
+            </select>
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form3Example2">RAM:</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="ram">
+              <option value="1">select</option>
+              <option value="8GB">8GB</option>
+              <option value="6GB">6GB</option>
+              <option value="4GB">4GB</option>
+              <option value="12GB">12GB</option>
+            </select>
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form3Example2">ROM:</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="rom">
+              <option value="1">select</option>
+              <option value="1 TB">1 TB</option>
+              <option value="512 GB">512 GB</option>
+              <option value="100 GB">100 GB</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form3Example2">Monitor Brand:</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="monitor">
+              <option value="1">select</option>
+              <option value="Dell">Dell</option>
+              <option value="Lenovo">Lenovo</option>
+              <option value="Hp">Hp</option>
+              <option value="Mac">MAC</option>
+            </select>
+          </div>
 
-    <div class="row">
-        <div class="col-sm-12 card-padding">
-            <div class="card">
-                <h2 style="background-color:#0275d8; padding-left:15px;border-radius: 10px;color: white;">SYSTEM</h2>
-                <div class="card2">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form12">ASSET ID:</label>
-                            <input  type="text" class="form-control" [(ngModel)]="assetid" />
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form12">Date of Purchase:</label>
-                            <input type="date" class="form-control" [(ngModel)]="dateofpurchase" />
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form3Example2">Shop Name:</label>
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="shopname">
-                                <option value="1">select</option>
-                                <option value="AMAZON">Amazon</option>
-                                <option value="FLIPKART">Flipkart</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form3Example2">RAM:</label>
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="ram">
-                                <option value="1">select</option>
-                                <option value="8GB">8GB</option>
-                                <option value="6GB">6GB</option>
-                                <option value="4GB">4GB</option>
-                                <option value="12GB">12GB</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form3Example2">ROM:</label>
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="rom">
-                                <option value="1">select</option>
-                                <option value="1 TB">1 TB</option>
-                                <option value="512 GB">512 GB</option>
-                                <option value="100 GB">100 GB</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form3Example2">Monitor Brand:</label>
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="monitor">
-                                <option value="1">select</option>
-                                <option value="Dell">Dell</option>
-                                <option value="Lenovo">Lenovo</option>
-                                <option value="Hp">Hp</option>
-                                <option value="Mac">MAC</option>
-                            </select>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">Quantity:</label>
+            <input type="text" class="form-control" [(ngModel)]="qty" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">Amount:</label>
+            <input type="text" class="form-control" [(ngModel)]="amount" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">Current User:</label>
+            <input type="text" class="form-control" [(ngModel)]="currentuser" />
+          </div>
+          <div class="col-sm-2 is">
+            <label class="form-label" for="form12">Last User:</label>
+            <input type="text" class="form-control" [(ngModel)]="lastuser" />
+          </div>
 
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form12">Quantity:</label>
-                            <input type="text" class="form-control" [(ngModel)]="qty"/>
-                        </div>
-                        <div class="col-sm-3">
-                            <label class="form-label" for="form12">Amount:</label>
-                            <input type="text" class="form-control" [(ngModel)]="amount"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                          <label class="form-label" for="form12">Current User:</label>
-                          <input type="text" class="form-control" [(ngModel)]="currentuser"/>
-                        </div>
-                        <div class="col-sm-3">
-                          <label class="form-label" for="form12">Last User:</label>
-                          <input type="text" class="form-control" [(ngModel)]="lastuser"/>
-                        </div>
-                      
-                    </div>
-                    <br>
-                    <!--SAVE AND VIEW BUTTON-->
-                    <div class="text-center" style="padding-bottom:10px;">
-                        <button type="button" class="btn btn-primary btn-lg"
-                            style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 10px;" [disabled]="(!assetid || !dateofpurchase || !shopname || !ram || !rom || !monitor || !qty || !amount || !currentuser || !lastuser )" (click)="onSubmit()">Submit</button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" responsiveLayout="scroll"
-        styleClass="p-datatable-gridlines">
-        <ng-template pTemplate="header" let-columns>
-          <tr>
-            <th>S.No</th>
-            <th *ngFor="let col of columns">
-              {{col.header}}
-            </th>
-            <th>
-              Edit/Update
-            </th>
-          </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
-          <tr>
-            <td class="td-border">
-              <span class="p-column-title">
-                S.No :
-              </span>
-              <span style="text-align: end;">
-                {{rowIndex+1}}
-                </span>
-                </td>
-                <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
-              <span class="p-column-title">
-                {{col.header}} :
-              </span>
-              <span style="text-align: end;"> {{rowData[col.field]}}
-              </span>
-
-            </td>
-            <td class="td-border">
-              <span class="p-column-title">
-                Edit/Update :
-              </span>
-              <span><button icon="pi pi-pencil" pButton type="button"  (click)="onEdit(rowData)" >
-                  Edit
-                </button></span>
-            </td>
-          </tr>
-        </ng-template>
-      </p-table>
         </div>
-    
+        <br>
+        <br>
+        <br>
+        <!--SAVE AND VIEW BUTTON-->
+        <div class="text-center" style="padding-bottom:10px;">
+          <button type="button" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 10px;"
+            [disabled]="(!assetid || !dateofpurchase || !shopname || !ram || !rom || !monitor || !qty || !amount || !currentuser || !lastuser )" (click)="onSubmit()">Submit</button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <p-table [columns]="cols" [value]="data" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" responsiveLayout="scroll"
+      styleClass="p-datatable-gridlines">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th>S.No</th>
+          <th *ngFor="let col of columns">
+            {{col.header}}
+          </th>
+          <th>
+            Edit/Update
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex" let-columns="columns">
+        <tr>
+          <td class="td-border">
+            <span class="p-column-title">
+              S.No :
+            </span>
+            <span style="text-align: end;">
+              {{rowIndex+1}}
+            </span>
+          </td>
+          <td *ngFor="let col of columns" [style.text-align]="col.align" class="td-border">
+            <span class="p-column-title">
+              {{col.header}} :
+            </span>
+            <span style="text-align: end;"> {{rowData[col.field]}}
+            </span>
+          </td>
+          <td class="td-border">
+            <span class="p-column-title">
+              Edit/Update :
+            </span>
+            <span><button icon="pi pi-pencil" pButton type="button" (click)="onEdit(rowData)">
+                Edit
+              </button></span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
