@@ -5,8 +5,8 @@
       <div class="card2">
         <div class="row">
           <div class="col-sm-2 is">
-            <label class="form-label" for="form12">ASSET ID:</label>
-            <input type="text" class="form-control" [(ngModel)]="assetid" />
+            <label class="form-label">ASSET ID:</label>
+            <input type="text" class="form-control" (keydown)="phoneKeyDown($event)" maxlength="4" minlength="1"[(ngModel)]="assetid" />
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">Date of Purchase:</label>
@@ -54,22 +54,21 @@
           </div>
 
           <div class="col-sm-2 is">
-            <label class="form-label" for="form12">Quantity:</label>
-            <input type="text" class="form-control" [(ngModel)]="qty" />
+            <label class="form-label">Quantity:</label>
+            <input type="text" class="form-control" (keydown)="phoneKeyDown($event)" [(ngModel)]="qty" />
           </div>
           <div class="col-sm-2 is">
-            <label class="form-label" for="form12">Amount:</label>
-            <input type="text" class="form-control" [(ngModel)]="amount" />
+            <label class="form-label">Amount:</label>
+            <input type="text" class="form-control" (keydown)="phoneKeyDown($event)" maxlength="8" minlength="4" [(ngModel)]="amount" />
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">Current User:</label>
-            <input type="text" class="form-control" [(ngModel)]="currentuser" />
+            <input type="text" class="form-control" (keypress)="letterOnly($event)" [(ngModel)]="currentuser" />
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">Last User:</label>
-            <input type="text" class="form-control" [(ngModel)]="lastuser" />
+            <input type="text" class="form-control"  (keypress)="letterOnly($event)" [(ngModel)]="lastuser" />
           </div>
-
         </div>
         <br>
         <br>
@@ -78,7 +77,8 @@
         <div class="text-center" style="padding-bottom:10px;">
           <button type="button" class="btn btn-primary btn-lg"
             style="padding-left: 2.5rem; padding-right: 2.5rem; margin-right: 10px;"
-            [disabled]="(!assetid || !dateofpurchase || !shopname || !ram || !rom || !monitor || !qty || !amount || !currentuser || !lastuser )" (click)="onSubmit()">Submit</button>
+            [disabled]="(!assetid || !dateofpurchase || !shopname || !ram || !rom || !monitor || !qty || !amount || !currentuser || !lastuser )"
+            (click)="onSubmit()">Submit</button>
         </div>
       </div>
     </div>

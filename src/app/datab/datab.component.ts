@@ -6,19 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./datab.component.css']
 })
 export class DatabComponent {
-email:string='';
-password:any;
-name:string="string interpolatioin example";
-disabled:boolean =false;
-item='sampath';
+
   constructor() { }
+name = "sampathkumar";
+show = false;
 
   ngOnInit(): void {
-    this.email = "enter your name"
+    console.log('component initialized');
   }
- onSubmit()
+
+ ngonDestroy()
+  {
+    console.log('component Destroyd');
+  }
+ toggle()
  {
-  console.log("submitted successfully");
-  console.log(this.email);
+  this.show = !this.show
  }
 }

@@ -16,13 +16,20 @@ import { AOspaceComponent } from './a-ospace/a-ospace.component';
 import { AddorreturnComponent } from './addorreturn/addorreturn.component';
 import { ItdashboardComponent } from './itdashboard/itdashboard.component';
 import { DatabComponent } from './datab/datab.component';
+import { LaptopComponent } from './purchase-entry/laptop/laptop.component';
+import { MonitorComponent } from './purchase-entry/monitor/monitor.component';
+import { CpuComponent } from './purchase-entry/cpu/cpu.component';
+import { KeyMouseComponent } from './purchase-entry/key-mouse/key-mouse.component';
+import { DongleComponent } from './purchase-entry/dongle/dongle.component';
+import { PrinterProjectorComponent } from './purchase-entry/printer-projector/printer-projector.component';
+import { SoftwareComponent } from './purchase-entry/software/software.component';
 
 
 const routes: Routes = [
   { path: '',redirectTo: '/dashboard', pathMatch: 'full' },
-  {path:'assetlogin',component:AssetloginComponent},
-  {path:'footer',component:FooterComponent},
-  {path:'header',component:HeaderComponent},
+  { path:'assetlogin',component:AssetloginComponent},
+  { path:'footer',component:FooterComponent},
+  { path:'header',component:HeaderComponent},
   { path:'dashboard',component:DashboardComponent},
   { path:'employeeregister',component:EmployeeregisterComponent},
   { path:'newuser',component:NewuserComponent},
@@ -36,6 +43,13 @@ const routes: Routes = [
   { path:'addorreturn',component:AddorreturnComponent},
   { path:'itdashboard',component:ItdashboardComponent},
   { path:'datab',component:DatabComponent},
+  { path:'laptop',component:LaptopComponent},
+  { path:'monitor',component:MonitorComponent},
+  { path:'cpu',component:CpuComponent},
+  { path:'key-mouse',component:KeyMouseComponent},
+  { path:'dongle',component:DongleComponent},
+  { path:'printer-projector',component:PrinterProjectorComponent},
+  { path:'software',component:SoftwareComponent},
 ];
 
 @NgModule({

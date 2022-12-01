@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AssetloginComponent } from './assetlogin/assetlogin.component';
@@ -11,7 +10,7 @@ import { EmployeeregisterComponent } from './employeeregister/employeeregister.c
 import { NewuserComponent } from './newuser/newuser.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -26,7 +25,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
@@ -70,7 +69,6 @@ import { MatInputModule } from '@angular/material/input';
     AddorreturnComponent,
     ItdashboardComponent,
     DatabComponent,
-  
   ],
   imports: [
     BrowserModule,
@@ -107,7 +105,6 @@ import { MatInputModule } from '@angular/material/input';
     MultiSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

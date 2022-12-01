@@ -15,7 +15,7 @@
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">NO OF SEATS:</label>
-            <input type="text" class="form-control" [(ngModel)]="seatno" />
+            <input type="text" class="form-control"(keydown)="phoneKeyDown($event)" maxlength="4" minlength="1" [(ngModel)]="seatno" />
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">OFFICE NAME:</label>
@@ -23,11 +23,11 @@
           </div>
           <div class="col-sm-2 is">
             <label class="form-label" for="form12">ASSET NUMBER:</label>
-            <input type="text" class="form-control" [(ngModel)]="assetnumber" />
+            <input type="text" class="form-control"(keydown)="phoneKeyDown($event)" maxlength="4" minlength="1" [(ngModel)]="assetnumber" />
           </div>
           <div class="col-sm-2 is">
             <label style="text-align: center;" class="form-label" for="form12">OCCUPIED SEATS:</label>
-            <input type="text" class="form-control" [(ngModel)]="occupiedseat" />
+            <input type="text" class="form-control" (keydown)="phoneKeyDown($event)" maxlength="4" minlength="1" [(ngModel)]="occupiedseat" />
           </div>
         </div>
         <br>

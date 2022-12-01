@@ -43,6 +43,7 @@ export class APspComponent implements OnInit {
       'lastuser': this.lastuser,
     };
     this.restApiService.post(PathConstants.printer_Post, params).subscribe(res => { })
+    this.onView();
     this.onClear();
   }
 
@@ -57,8 +58,9 @@ export class APspComponent implements OnInit {
     this.purchasedlocation = rowData.purchasedlocation;
     this.printerstatus = rowData.printerstatus;
     this.currentuser = rowData.currentuser;
-    this.lastuser = rowData.lastuser
+    this.lastuser = rowData.lastuser;
   }
+  
 
   onClear() {
     this.printername = null;

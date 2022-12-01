@@ -25,7 +25,9 @@ export class AppComponent {
         }
       }
       if (events instanceof NavigationEnd) {
-        if ((events.url === '/asystem') || (events.url === '/alicense') || (events.url === '/adongle') || (events.url === '/aoffice') || (events.url === '/apsp') || (events.url === '/addreturnasset') || (events.url === '/aospace') || (events.url === '/itdashboard')) {
+        if ((events.url === '/asystem') || (events.url === '/alicense') || (events.url === '/adongle') || (events.url === '/aoffice') || (events.url === '/apsp') || (events.url === '/addreturnasset') || (events.url === '/aospace') || (events.url === '/itdashboard')||
+         (events.url === '/laptop') || (events.url === '/monitor') || (events.url === '/cpu') || (events.url === '/key-mouse') || (events.url === '/dongle') || (events.url === '/printer-projector') || (events.url === '/software'))
+        {
           console.log('1')
           this.offmenu = true;
         }

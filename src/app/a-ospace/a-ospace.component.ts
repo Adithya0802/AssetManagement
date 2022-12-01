@@ -65,4 +65,10 @@ export class AOspaceComponent implements OnInit {
     this.assetnumber = null;
     this.occupiedseat = null;
   }
+  phoneKeyDown(e:any){
+    const keyCode = e.keyCode;  
+    if (( (e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) && e.keyCode !=8) {
+e.preventDefault();
+    }    
+}
 }

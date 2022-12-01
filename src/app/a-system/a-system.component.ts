@@ -88,4 +88,18 @@ export class ASystemComponent implements OnInit {
     this.lastuser = null;
 
   }
+  phoneKeyDown(e: any) {
+    const keyCode = e.keyCode;
+    if (((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) && e.keyCode != 8) {
+      e.preventDefault();
+    }
+  }
+
+  letterOnly(event: any): Boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if ((charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
+      return false;
+    }
+    return true;
+  }
 }
